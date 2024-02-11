@@ -3,17 +3,23 @@ const player2Name = document.getElementById("p2-name");
 const p1Symbol = document.getElementById("p1-symbol");
 const p2Symbol = document.getElementById("p2-symbol");
 
-const player1 = {
-    name: "Zafar",
-    Symbol: "X",
-}
 
-const player2 = {
-    name: "Angela",
-    Symbol: "O",
-}
+const players = [
+    {name: "Zafar", symbol: "X"},
+    {name: "Angela", symbol: "O"},
+]
 
-player1Name.textContent = player1.name;
-player2Name.textContent = player2.name;
-p1Symbol.textContent = player1.Symbol;
-p2Symbol.textContent = player2.Symbol;
+
+player1Name.textContent = players[0].name;
+player2Name.textContent = players[1].name;
+p1Symbol.textContent = players[0].symbol;
+p2Symbol.textContent = players[1].symbol;
+
+const squares = document.querySelectorAll(".square");
+console.log(squares);
+
+for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener("click", () => {
+        squares[i].textContent = players[1].symbol;
+    })
+}
